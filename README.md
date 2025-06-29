@@ -137,6 +137,29 @@ Wprowadź wymagane dane (IP, tokeny, nazwę kontenera) — zostaną zapisane w `
 * Umożliwia zdalne śledzenie statusu i awarii z poziomu Telegrama
 
 ---
+Oto **ogólne podpunkty** pokazujące, **co robi ten skrypt instalacyjny**:
+
+1. **Rozpoczyna konfigurację watchdoga do monitorowania połączenia i kontenera.**
+
+2. **Instaluje brakujące narzędzia potrzebne do działania skryptu (ping, cron, curl).**
+
+3. **Upewnia się, że systemowy harmonogram zadań (`cron`) jest aktywny.**
+
+4. **Pobiera od użytkownika wymagane dane konfiguracyjne (adresy IP, dane Telegrama, nazwa kontenera).**
+
+5. **Zapisuje te dane do pliku `.env` z odpowiednimi uprawnieniami.**
+
+6. **Nadaje skryptowi watchdoga prawo do uruchamiania.**
+
+7. **Tworzy i przygotowuje plik logów, w którym będą zapisywane działania watchdoga.**
+
+8. **Ustawia zadania `cron` do:**
+
+   * uruchamiania watchdoga co minutę,
+   * czyszczenia logu raz dziennie jeżeli ma więcej niż 500 linii
+
+9. **Wyświetla aktualny harmonogram zadań i kończy konfigurację.**
+---
 
 ## 💬 Przykładowe wiadomości Telegram
 
