@@ -30,13 +30,12 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 │   ├── miner_watchdog.sh
 │   └── .env
 ```
-```
-```
+
 ## 🔧 Instalacja z GitHub (zalecana)
 
 Zaloguj się na urządzenie jako `root`, następnie:
 
-* Zainstaluj git (jeśli nie masz) *
+* Zainstaluj git (jeśli nie masz) 
 ```bash
 apt-get install -y git
 ```
@@ -46,18 +45,18 @@ cd /root
 git clone https://github.com/hattimon/miner_watchdog.git
 ```
 
-# Skopiuj skrypty do katalogu /root (zgodnie z założeniami instalatora)
+* Skopiuj skrypty do katalogu /root (zgodnie z założeniami instalatora)
 ```bash
 cp miner_watchdog/scripts/*.sh /root
 ```
 
-# Usuń ewentualne znaki Windows
+* Usuń ewentualne znaki Windows
 ```bash
 sed -i 's/\r$//' /root/setup_miner_watchdog.sh
 sed -i 's/\r$//' /root/miner_watchdog.sh
 ```
 
-# Nadaj uprawnienia i uruchom instalację
+* Nadaj uprawnienia i uruchom instalację
 ```bash
 chmod +x /root/setup_miner_watchdog.sh
 ```
@@ -103,8 +102,6 @@ Nadaj prawa wykonywania:
 ```bash
 chmod +x /root/setup_miner_watchdog.sh
 ```
-
----
 
 ### 3. Uruchom instalator
 
