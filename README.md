@@ -30,6 +30,7 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 │   ├── miner_watchdog.sh
 │   └── .env
 ```
+* [Dostęp do konta ROOT oraz Hardware/Software Linki.](https://github.com/hattimon/miner_watchdog/blob/main/linki.md)
 
 ## 🔧 Instalacja z GitHub (zalecana)
 
