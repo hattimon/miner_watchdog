@@ -58,7 +58,7 @@ INFO_MESSAGE=$(cat <<EOF
    3️⃣ Reboot systemu  
 
 ⏸️ Po 3 nieudanych próbach pauza rośnie wykładniczo:  
-30 min → 1h → 2h → 4h → 8h → 16h → 24h  
+30 min → 1h → 2h → 4h → 8h → 16h → 24h (max) 
 EOF
 )
 
