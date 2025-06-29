@@ -36,11 +36,11 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 
 Zaloguj się na urządzenie jako `root`, następnie:
 
-# Zainstaluj git (jeśli nie masz)
+* Zainstaluj git (jeśli nie masz) *
 ```bash
 apt-get install -y git
 ```
-# Sklonuj repozytorium
+* Sklonuj repozytorium
 ```bash
 cd /root
 git clone https://github.com/hattimon/miner_watchdog.git
