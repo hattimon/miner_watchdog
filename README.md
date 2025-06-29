@@ -14,7 +14,7 @@ Jeśli wykryje problemy, podejmuje **automatyczne akcje naprawcze** w ustalonej 
 2. ♻️ Restart interfejsów sieciowych (eth0, wlan0) i usług (`connman`, `NetworkManager`)
 3. 🔁 Restart systemu
    
-⏸️ Po 3 nieudanych próbach pauza rośnie według schematu:  
+⏸️ Po 3 nieudanych próbach pauza rośnie wykładniczo:  
 30 min → 1h → 2h → 4h → 8h → 16h → 24h  
 
 🔄 Reset pauzy:
