@@ -21,7 +21,7 @@ https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-ga
 
 ---
 
-## ✅ **1. Utwórz bota na Telegramie**
+## ✅ 1. Utwórz bota na Telegramie
 
 1. **Otwórz Telegrama** (aplikację mobilną lub desktop/web).
 
