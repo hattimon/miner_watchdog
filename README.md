@@ -16,8 +16,6 @@ Jeśli wykryje problemy, podejmuje **automatyczne akcje naprawcze** w ustalonej 
 
 Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 
----
-
 ## 📋 Wymagania
 
 * System oparty na **Debian/Ubuntu** (np. Debian 9 Stretch) 🔹✅Domyślnie na Heltec
@@ -25,11 +23,13 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 * Konto Telegram z botem i chatem
 * Urządzenie [HT-M2808 Indoor Hotspot For Helium](https://heltec.org/project/ht-m2808/) z radiem [HT-M01S Indoor LoRa Gateway (Rev.2.0)](https://heltec.org/project/ht-m01s-v2/) lub bez zewnętrznego radia (wtedy podaj stały adres LAN do pingów np. routera)
 * **Konieczna prawidlowa lokalizacja skryptów:**
+---
 /
 ├── root/
 │   ├── setup_miner_watchdog.sh
-│   └── miner_watchdog.sh
-
+│   ├── miner_watchdog.sh
+│   └── .env
+---
 ```
 ```
 ## 🔧 Instalacja z GitHub (zalecana)
