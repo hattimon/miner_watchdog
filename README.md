@@ -154,7 +154,7 @@ Dysk: 72%
 
 ---
 
-## 🛯 Reset pauzy
+## 🔄 Reset pauzy
 
 Po przywróceniu połączenia pauza zostaje automatycznie wyzerowana, a system sam się przywraca do normalnego trybu pracy.
 
@@ -208,6 +208,7 @@ miner_watchdog/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
+├── linki.md
 ```
 
 ---
