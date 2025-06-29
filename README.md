@@ -13,6 +13,12 @@ Jeśli wykryje problemy, podejmuje **automatyczne akcje naprawcze** w ustalonej 
 1. 🔄 Restart kontenera Docker z minerem
 2. ♻️ Restart interfejsów sieciowych (eth0, wlan0) i usług (`connman`, `NetworkManager`)
 3. 🔁 Restart systemu
+   
+⏸️ Po 3 nieudanych próbach pauza rośnie według schematu:  
+30 min → 1h → 2h → 4h → 8h → 16h → 24h  
+
+🔄 Reset pauzy:
+Po przywróceniu połączenia pauza zostaje automatycznie wyzerowana, a system sam się przywraca do normalnego trybu pracy.
 
 Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 
@@ -153,12 +159,6 @@ Dysk: 72%
 * Dane stanu i retry znajdują się w: `/var/lib/miner_watchdog`
 * Logi: `/var/log/miner_watchdog.log`
 * Konfiguracja: `/root/.env`
-
----
-
-## 🔄 Reset pauzy
-
-Po przywróceniu połączenia pauza zostaje automatycznie wyzerowana, a system sam się przywraca do normalnego trybu pracy.
 
 ---
 
