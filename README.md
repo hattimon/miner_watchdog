@@ -77,9 +77,9 @@ cd /root
 | `CONTAINER_NAME` | Nazwa kontenera Docker z minerem                                          | `miner`            |
 | `BOT_TOKEN`      | Token utworzony przez [@BotFather](https://t.me/BotFather) na Telegramie  | `123456789:ABC...` |
 | `CHAT_ID`        | Chat ID Telegrama uzyskany przez [@userinfobot](https://t.me/userinfobot) | `987654321`        |
-Instrukcja telegram_bot: https://github.com/hattimon/miner_watchdog/blob/main/telegram_bot.md
 
 ---
+Instrukcja telegram_bot: https://github.com/hattimon/miner_watchdog/blob/main/telegram_bot.md
 
 ## 🔧 Alternatywnie: ręczne kopiowanie plików
 
