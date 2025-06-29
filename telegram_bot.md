@@ -1,4 +1,4 @@
-Oto **instrukcja krok po kroku**, jak stworzyć bota na Telegramie i zdobyć wszystkie potrzebne dane, które później wpiszesz do pliku `.env`, by zintegrować go np. z `miner_watchdog.sh`.
+## Oto **instrukcja krok po kroku**, jak stworzyć bota na Telegramie i zdobyć wszystkie potrzebne dane, które później wpiszesz do pliku `.env`, by zintegrować go np. z `miner_watchdog.sh`.
 
 ---
 
