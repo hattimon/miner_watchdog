@@ -45,7 +45,7 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 Zaloguj się przez SSH i skopiuj pliki do katalogu `/root`:
 
 ```bash
-scp setup_miner_watchdog.sh miner_watchdog.sh root@RADIO_IP:/root
+scp setup_miner_watchdog.sh miner_watchdog.sh root@HOTSPOT_IP:/root
 ```
 
 Usuń ewentualne znaki Windows `\r`:
