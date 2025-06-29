@@ -4,8 +4,8 @@ ___
 # HT-M2808 Indoor Hotspot For Helium:
 https://heltec.org/project/ht-m2808/
 
-# RADIO:
-HT-M01S Indoor LoRa Gateway (Rev.2.0):
+# RADIO: HT-M01S Indoor LoRa Gateway (Rev.2.0)
+(Zewnętrzne - konfiguracja i hasło do konta root po kontakcie z support heltec.org):
 https://heltec.org/project/ht-m01s-v2/
 ___
 
