@@ -79,7 +79,7 @@ cd /root
 | `CHAT_ID`        | Chat ID Telegrama uzyskany przez [@userinfobot](https://t.me/userinfobot) | `987654321`        |
 
 ---
-Instrukcja telegram_bot: https://github.com/hattimon/miner_watchdog/blob/main/telegram_bot.md
+* [Instrukcja telegram_bot](https://github.com/hattimon/miner_watchdog/blob/main/telegram_bot.md)
 
 ## 🔧 Alternatywnie: ręczne kopiowanie plików
 
@@ -210,6 +210,7 @@ miner_watchdog/
 ├── LICENSE
 ├── README.md
 ├── linki.md
+└── telegram_bot.md
 ```
 
 ---
