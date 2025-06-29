@@ -20,9 +20,45 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 
 ## 📋 Wymagania
 
-* System oparty na **Debian/Ubuntu** (np. Debian 9 Stretch)
-* `docker` z zainstalowanym minerem Helium
+* System oparty na **Debian/Ubuntu** (np. Debian 9 Stretch) 🔹✅Domyślnie na Heltec
+* `docker` z zainstalowanym minerem Helium 🔹✅Domyślnie na Heltec (kontener nazywa się "miner")
 * Konto Telegram z botem i chatem
+* Urządzenie [HT-M2808 Indoor Hotspot For Helium](https://heltec.org/project/ht-m2808/) z radiem [HT-M01S Indoor LoRa Gateway (Rev.2.0)](https://heltec.org/project/ht-m01s-v2/) lub bez zewnętrznego radia (wtedy podaj stały adres LAN do pingów np. routera)
+* **Konieczna prawidlowa lokalizacja skryptów:**
+/
+├── root/
+│   ├── setup_miner_watchdog.sh
+│   └── miner_watchdog.sh
+
+```
+
+
+---
+
+## 🔧 Instalacja z GitHub (zalecana)
+
+Zaloguj się na urządzenie jako `root`, następnie:
+
+```bash
+# Zainstaluj git (jeśli nie masz)
+apt-get install -y git
+
+# Sklonuj repozytorium
+cd /root
+git clone https://github.com/hattimon/miner_watchdog.git
+
+# Skopiuj skrypty do katalogu /root (zgodnie z założeniami instalatora)
+cp miner_watchdog/scripts/*.sh /root
+
+# Usuń ewentualne znaki Windows
+sed -i 's/\r$//' /root/setup_miner_watchdog.sh
+sed -i 's/\r$//' /root/miner_watchdog.sh
+
+# Nadaj uprawnienia i uruchom instalację
+chmod +x /root/setup_miner_watchdog.sh
+cd /root
+./setup_miner_watchdog.sh
+```
 
 ---
 
@@ -39,6 +75,8 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 | `CHAT_ID`        | Chat ID Telegrama uzyskany przez [@userinfobot](https://t.me/userinfobot) | `987654321`        |
 
 ---
+
+## 🔧 Alternatywnie: ręczne kopiowanie plików
 
 ### 2. Skopiuj pliki na Helium Miner
 
@@ -85,7 +123,7 @@ Wprowadź wymagane dane (IP, tokeny, nazwę kontenera) — zostaną zapisane w `
 * * * * * /bin/bash /root/miner_watchdog.sh >> /var/log/miner_watchdog.log 2>&1
 ```
 
-* Instaluje brakujące pakiety (`cron`, `curl`, `ping`) **bez aktualizowania systemu**
+* Instaluje brakujące pakiety (`cron`, `curl`, `ping`) **bez aktualizowania systemu** (stare repo)
 * Umożliwia zdalne śledzenie statusu i awarii z poziomu Telegrama
 
 ---
@@ -94,7 +132,7 @@ Wprowadź wymagane dane (IP, tokeny, nazwę kontenera) — zostaną zapisane w `
 
 ```
 🚀 Miner Watchdog uruchomiony
-📱 Sprawdzam stan radia: 192.168.1.20
+📡 Sprawdzam stan radia: 192.168.1.20
 🌐 Sprawdzam połączenie internetowe: 8.8.8.8
 ...
 📊 Status systemu:
