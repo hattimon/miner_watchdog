@@ -38,7 +38,24 @@ get_system_info() {
     fi
 
     DISK=$(df / | awk 'END { print $(NF-1) }')
-    echo -e "CPU: $CPU\nRAM: $RAM\nTemp: $TEMP\nDysk: $DISK"
+
+    # IP Ethernet (eth0)
+    ETH_IP_RAW=$(ip -o -4 addr show eth0 2>/dev/null | awk '{print $4}' | cut -d/ -f1)
+    if [ -z "$ETH_IP_RAW" ]; then
+        ETH_IP="brak ❌"
+    else
+        ETH_IP="$ETH_IP_RAW ✅"
+    fi
+
+    # IP WiFi (wlan0)
+    WLAN_IP_RAW=$(ip -o -4 addr show wlan0 2>/dev/null | awk '{print $4}' | cut -d/ -f1)
+    if [ -z "$WLAN_IP_RAW" ]; then
+        WLAN_IP="brak ❌"
+    else
+        WLAN_IP="$WLAN_IP_RAW ✅"
+    fi
+
+    echo -e "📊 Status systemu:\nCPU: $CPU\nRAM: $RAM\nTemp: $TEMP\nDysk: $DISK\n\n📡 *Aktywne Hotspot IP:*\n 🌐 IP Ethernet (eth0): $ETH_IP\n 📶 IP WiFi (wlan0): $WLAN_IP"
 }
 
 send_telegram() {
