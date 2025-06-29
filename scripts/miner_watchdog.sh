@@ -34,7 +34,7 @@ get_system_info() {
         TEMP_RAW=$(cat /sys/class/thermal/thermal_zone0/temp)
         TEMP=$(awk "BEGIN {printf \"%.1f°C\", $TEMP_RAW/1000}")
     else
-        TEMP="?"
+        TEMP="? "
     fi
 
     DISK=$(df / | awk 'END { print $(NF-1) }')
@@ -57,26 +57,17 @@ INFO_MESSAGE=$(cat <<EOF
    2️⃣ Restart interfejsów sieciowych i usług (eth0, wlan0, connman, NetworkManager)  
    3️⃣ Reboot systemu  
 
-⏸️ Po 3 nieudanych próbach pauza rośnie według schematu:  
+⏸️ Po 3 nieudanych próbach pauza rośnie wykładniczo:  
 30 min → 1h → 2h → 4h → 8h → 16h → 24h  
 EOF
 )
-
 
 if [ ! -f "$STATE_FILE" ]; then
     SYSINFO="$(get_system_info)"
     INTRO_MSG=$(cat <<EOF
 🚀 *Miner Watchdog uruchomiony* 🚀
 ━━━━━━━━━━━━━━━━━━━━━━━
-📡 Sprawdzam stan radia: \`$RADIO_IP\`  
-🌐 Sprawdzam połączenie internetowe: \`$INTERNET_IP\`  
-🛠️ Przy problemach wykonuję kolejno:
-   1️⃣ Restart kontenera *$CONTAINER*  
-   2️⃣ Restart interfejsów sieciowych i usług (eth0, wlan0, connman, NetworkManager)  
-   3️⃣ Reboot systemu  
-
-⏸️ Po 3 nieudanych próbach pauza rośnie według schematu:  
-30 min → 1h → 2h → 4h → 8h → 16h → 24h  
+$INFO_MESSAGE
 
 🔄 Połączenie odzyskane — licznik prób i pauz wraca do zera.  
 📩 Wszystkie ważne akcje i zmiany stanu są raportowane na Telegram.
@@ -91,14 +82,14 @@ fi
 NOW=$(date +%s)
 PAUSE_UNTIL=$(cat "$PAUSE_FILE" 2>/dev/null || echo 0)
 
-# Pingujemy radio i internet nawet jeśli trwa pauza
+# Pingowanie
 ping -c 1 -W 1 "$RADIO_IP" > /dev/null && RADIO_OK=1 || RADIO_OK=0
 ping -c 1 -W 1 "$INTERNET_IP" > /dev/null && INTERNET_OK=1 || INTERNET_OK=0
 
 CURRENT_STATE="${RADIO_OK}${INTERNET_OK}"
 PREV_STATE=$(cat "$STATE_FILE" 2>/dev/null || echo "")
 
-# Jeśli trwa pauza, ale połączenie wróciło — resetuj pauzę i wyślij wiadomość
+# Reset pauzy, jeśli połączenie wróciło
 if [ "$NOW" -lt "$PAUSE_UNTIL" ]; then
     if [ "$CURRENT_STATE" = "11" ]; then
         echo "$(date): ✅ Połączenie odzyskane w czasie pauzy. Resetuję pauzę." >> "$LOG"
@@ -111,10 +102,7 @@ if [ "$NOW" -lt "$PAUSE_UNTIL" ]; then
 
 🛑 Pauza została przerwana i wyzerowana.
 
-🔹🔹🔹 *JAK DZIAŁA SKRYPT* 🔹🔹🔹
 $INFO_MESSAGE
-🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
-━━━━━━━━━━━━━━━━━━━━
 
 📊 *Status systemu*:
 $SYSINFO
@@ -141,10 +129,7 @@ if [ "$CURRENT_STATE" = "11" ]; then
 📡 Radio: ✅ Tak
 🌐 Internet: ✅ Tak
 
-🔹🔹🔹 *JAK DZIAŁA SKRYPT* 🔹🔹🔹
 $INFO_MESSAGE
-🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹
-━━━━━━━━━━━━━━━━━━━━
 
 📊 *Status systemu*:
 $SYSINFO
@@ -213,7 +198,13 @@ elif [ "$RETRIES" -ge "$MAX_RETRIES" ]; then
     RETRIES_COUNT=$(cat "$RETRIES_COUNT_FILE" 2>/dev/null || echo 0)
     RETRIES_COUNT=$((RETRIES_COUNT + 1))
     echo "$RETRIES_COUNT" > "$RETRIES_COUNT_FILE"
-    PAUSE_MIN=$((30 * RETRIES_COUNT))
+
+    # ⏳ Oblicz wykładniczo rosnącą pauzę, maksymalnie 1440 minut (24h)
+    EXP_PAUSE=$((30 * 2 ** (RETRIES_COUNT - 1)))
+    if [ "$EXP_PAUSE" -gt 1440 ]; then
+        EXP_PAUSE=1440
+    fi
+    PAUSE_MIN=$EXP_PAUSE
     PAUSE_UNTIL=$((NOW + PAUSE_MIN * 60))
     echo "$PAUSE_UNTIL" > "$PAUSE_FILE"
     PAUSE_END_HUMAN=$(TZ="Europe/Warsaw" date -d "@$PAUSE_UNTIL" "+%H:%M")
