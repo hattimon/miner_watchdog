@@ -15,7 +15,7 @@ Jeśli wykryje problemy, podejmuje **automatyczne akcje naprawcze** w ustalonej 
 3. 🔁 Restart systemu
    
 ⏸️ Po 3 nieudanych próbach pauza rośnie wykładniczo:  
-30 min → 1h → 2h → 4h → 8h → 16h → 24h  
+30 min → 1h → 2h → 4h → 8h → 16h → 24h (max) 
 
 🔄 **Reset pauzy:**
 Po przywróceniu połączenia pauza zostaje automatycznie wyzerowana, a system sam się przywraca do normalnego trybu pracy.
