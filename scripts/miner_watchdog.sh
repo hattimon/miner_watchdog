@@ -55,7 +55,7 @@ get_system_info() {
         WLAN_IP="$WLAN_IP_RAW ✅"
     fi
 
-    echo -e "📊 Status systemu:\nCPU: $CPU\nRAM: $RAM\nTemp: $TEMP\nDysk: $DISK\n\n📡 *Aktywne Hotspot IP:*\n 🌐 IP Ethernet (eth0): $ETH_IP\n 📶 IP WiFi (wlan0): $WLAN_IP"
+    echo -e "\nCPU: $CPU\nRAM: $RAM\nTemp: $TEMP\nDysk: $DISK\n\n📡 *Aktywne Hotspot IP:*\n 🌐 IP Ethernet (eth0): $ETH_IP\n 📶 IP WiFi (wlan0): $WLAN_IP"
 }
 
 send_telegram() {
