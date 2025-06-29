@@ -16,7 +16,3 @@ https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
 
 # Dostęp przez SSH do konta root na Heltec:
 https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
-
-## Oto **instrukcja krok po kroku**, jak stworzyć bota na Telegramie i zdobyć wszystkie potrzebne dane, które później wpiszesz do pliku `.env`, by zintegrować go np. z `miner_watchdog.sh`.
-
----
