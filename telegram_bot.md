@@ -85,8 +85,8 @@ curl -s -X POST https://api.telegram.org/bot123456789:ABCdefGhIJKlmNOPqrsTUVwxyz
 Na podstawie powyższych kroków, dodaj do `.env`:
 
 ```
-TELEGRAM_BOT_TOKEN=123456789:ABCdefGhIJKlmNOPqrsTUVwxyz0123456789
-TELEGRAM_CHAT_ID=987654321
+BOT_TOKEN=123456789:ABCdefGhIJKlmNOPqrsTUVwxyz0123456789
+CHAT_ID=987654321
 ```
 
 ---
