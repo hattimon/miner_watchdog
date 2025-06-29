@@ -3,7 +3,7 @@ Watchdog dla Heltec HT-M2808 Hotspot Helium
 
 # 🛡 miner\_watchdog — watchdog dla Heltec HT-M2808 Hotspot
 
-Skrypt `miner_watchdog` automatycznie monitoruje:
+Skrypt `miner_watchdog` automatycznie monitoruje co minutę:
 
 * 🚀 połączenie z radiem Heltec (`RADIO_IP`)
 * 🌍 połączenie z Internetem (`INTERNET_IP`)
