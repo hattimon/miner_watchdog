@@ -164,18 +164,52 @@ Oto **ogólne podpunkty** pokazujące, **co robi ten skrypt instalacyjny**:
 ## 💬 Przykładowe wiadomości Telegram
 
 ```
-🚀 Miner Watchdog uruchomiony
-📡 Sprawdzam stan radia: 192.168.1.20
-🌐 Sprawdzam połączenie internetowe: 8.8.8.8
-...
-📊 Status systemu:
-CPU: 5.2%
-RAM: 38.1%
-Temp: 45.6°C
-Dysk: 72%
-```
+✅ Miner Watchdog — Połączenie przywrócone
+━━━━━━━━━━━━━━━━━━━━
+📡 Radio: ✅ Tak
+🌐 Internet: ✅ Tak
 
+📡 Sprawdzam stan radia: 192.168.0.100  
+🌐 Sprawdzam połączenie internetowe: 8.8.8.8  
+🛠️ Przy problemach wykonuję kolejno:
+   1️⃣ Restart kontenera miner  
+   2️⃣ Restart interfejsów sieciowych i usług (eth0, wlan0, connman, NetworkManager)  
+   3️⃣ Reboot systemu  
+
+⏸️ Po 3 nieudanych próbach pauza rośnie wykładniczo:  
+30 min → 1h → 2h → 4h → 8h → 16h → 24h (max) 
+
+📊 Status systemu:
+
+CPU: 3.1%
+RAM: 6.3%
+Temp: 50.8°C
+Dysk: 27%
+
+📡 Aktywne Hotspot IP:
+ 🌐 IP Ethernet (eth0): 192.168.0.120 ✅
+ 📶 IP WiFi (wlan0): brak ❌
 ---
+```
+```
+⚙️ Miner Watchdog — Restart kontenera
+━━━━━━━━━━━━━━━━━━━━
+📡 Radio: ✅ Tak
+🌐 Internet: ❌ Nie
+
+🔄 Restartuję kontener: miner
+
+📊 Status systemu:
+
+CPU: 3.1%
+RAM: 6.2%
+Temp: 48.2°C
+Dysk: 27%
+
+📡 Aktywne Hotspot IP:
+ 🌐 IP Ethernet (eth0): 192.168.0.120 ✅
+ 📶 IP WiFi (wlan0): brak ❌
+```
 
 ## 💾 Dane i logi
 
@@ -188,6 +222,7 @@ Dysk: 72%
 ## 🔎 Dodatkowe pliki repozytorium
 
 **`.gitignore`**:
+```
 
 ```
 .env
