@@ -243,8 +243,6 @@ Dysk: 27%
 
 **`.gitignore`**:
 ```
-
-```
 .env
 *.log
 *.tmp
