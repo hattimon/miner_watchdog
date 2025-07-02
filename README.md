@@ -189,7 +189,6 @@ Dysk: 27%
 📡 Aktywne Hotspot IP:
  🌐 IP Ethernet (eth0): 192.168.0.120 ✅
  📶 IP WiFi (wlan0): brak ❌
----
 ```
 ```
 ⚙️ Miner Watchdog — Restart kontenera
@@ -204,6 +203,27 @@ Dysk: 27%
 CPU: 3.1%
 RAM: 6.2%
 Temp: 48.2°C
+Dysk: 27%
+
+📡 Aktywne Hotspot IP:
+ 🌐 IP Ethernet (eth0): 192.168.0.120 ✅
+ 📶 IP WiFi (wlan0): brak ❌
+```
+```
+🛑 Miner Watchdog — Reboot systemu
+━━━━━━━━━━━━━━━━━━━━
+📡 Radio: ❌ Nie
+🌐 Internet: ✅ Tak
+
+💣 Uruchamiam ponownie system
+
+⏸️ Pauza: 30 min (do 09:39)
+
+📊 Status systemu:
+
+CPU: 4.1%
+RAM: 6.6%
+Temp: 45.0°C
 Dysk: 27%
 
 📡 Aktywne Hotspot IP:
