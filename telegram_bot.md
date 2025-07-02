@@ -33,7 +33,7 @@
    123456789:ABCdefGhIJKlmNOPqrsTUVwxyz0123456789
    ```
 
-   ✅ **Zapisz token!** To będzie `TELEGRAM_BOT_TOKEN`.
+   ✅ **Zapisz token!** To będzie `BOT_TOKEN`.
 
 ---
 
@@ -54,7 +54,7 @@ Masz dwie opcje:
    First Name: Jan
    ```
 
-   ✅ **Zapisz ten numer** – to jest `TELEGRAM_CHAT_ID`.
+   ✅ **Zapisz ten numer** – to jest `CHAT_ID`.
 
 ---
 
