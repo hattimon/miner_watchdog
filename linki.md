@@ -179,9 +179,10 @@ Ten wygodny generator w stylu retro-hackerskim umożliwia szybkie tworzenie skry
 - Ma audiowizualny klimat „super-hero code master” z animacją, muzyką w tle i „matrix rain”.
 
  **Sprawdź go już teraz:**  
-[**Generator – SenseCap M1 (futurystyczny motyw)**](https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html){: style="color: #ff8800; font-weight: bold; text-decoration: none;"}
+[**Generator – SenseCap M1 (futurystyczny motyw)**](https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html)
 
  Po kliknięciu strona otworzy się w nowej karcie i od razu zaoferuje gotowy interaktywny generator—z ćmy, neonami i muzyką!  
+
 
 
 
