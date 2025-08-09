@@ -148,7 +148,7 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
 8. Zaznacz opcję **Use private key** i wskaż ścieżkę do pliku z kluczem prywatnym, np.:
 
    ```
-   C:\Users\Kosmo\.ssh\sensecap_root
+   C:\Users\Kowalski\.ssh\sensecap_key
    ```
 
 9. (Opcjonalnie) W sekcji **SSH-browser type** możesz ustawić protokół **SFTP**, aby mieć możliwość transferu plików.
@@ -182,6 +182,7 @@ Ten wygodny generator w stylu retro-hackerskim umożliwia szybkie tworzenie skry
 [**Generator – SenseCap M1 (futurystyczny motyw)**](https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html)
 
  Po kliknięciu strona otworzy się w nowej karcie i od razu zaoferuje gotowy interaktywny generator—z ćmy, neonami i muzyką!  
+
 
 
 
