@@ -170,7 +170,20 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
 ✅ Teraz możesz zdalnie zarządzać SenseCap M1 przez terminal w **MobaXterm**!
 ___
 
-Generator konfiguracji sieciowej na sensecap...
+## Generator konfiguracji sieciowej dla SenseCap M1
+
+Ten wygodny generator w stylu retro-hackerskim umożliwia szybkie tworzenie skryptu bash dla balenaOS (NetworkManager), który:
+- Umożliwia konfigurację WiFi (DHCP lub statyczne IP),
+- Obsługuje tryb „Tylko Ethernet” (usunięcie WiFi i wyłączenie radia),
+- Dodaje opcje kopiowania lub pobrania wygenerowanego skryptu,
+- Ma audiowizualny klimat „super-hero code master” z animacją, muzyką w tle i „matrix rain”.
+
+ **Sprawdź go już teraz:**  
+[**Generator – SenseCap M1 (futurystyczny motyw)**](https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html){: style="color: #ff8800; font-weight: bold; text-decoration: none;"}
+
+ Po kliknięciu strona otworzy się w nowej karcie i od razu zaoferuje gotowy interaktywny generator—z ćmy, neonami i muzyką!  
+
+
 
 
 
