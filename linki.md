@@ -159,7 +159,7 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
 ## 💡 Dodatkowe uwagi
 
 - Upewnij się, że klucz prywatny nie jest chroniony hasłem **lub** że agent SSH (`ssh-agent`) jest uruchomiony, jeśli klucz ma passphrase.
-   (domyslnie MobaXterm ma uruchomionego agenta SSH, a klucz generowany powyższym sposobem będzie wymagał tylko raz podania hasła do klucza jakie ustawiliśmy w ssh-keygen)
+   (domyslnie MobaXterm ma uruchomionego agenta SSH, a klucz generowany powyższym sposobem będzie wymagał tylko raz podanie hasła do klucza jakie ustawiliśmy w ssh-keygen)
 - Jeśli SenseCap M1 działa na innym porcie niż 22222, ustaw go w polu **Port**.
 - W przypadku problemów z połączeniem sprawdź:
   - Czy urządzenie jest dostępne w sieci (ping).
@@ -171,5 +171,6 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
 ___
 
 Generator konfiguracji sieciowej na sensecap...
+
 
 
