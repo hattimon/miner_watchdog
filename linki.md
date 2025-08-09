@@ -108,3 +108,66 @@ ___
 ---
 
 Gratulacje! Jesteś zalogowany jako root na SenseCap M1 i możesz teraz konfigurować urządzenie.
+___
+
+# Instrukcja połączenia z SenseCap M1 przez MobaXterm
+
+Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urządzenia **SenseCap M1** za pomocą **MobaXterm** i klucza SSH.
+
+---
+
+## 📋 Wymagania
+
+- Zainstalowany [MobaXterm](https://mobaxterm.mobatek.net/) na Windowsie  
+- Wygenerowany klucz SSH (np. `ssh-keygen`)  
+- Klucz prywatny dostępny lokalnie  
+- Adres IP SenseCap M1  
+- Dane dostępu (np. login `root`)  
+
+---
+
+## 🔌 Jak się połączyć
+
+1. Uruchom **MobaXterm**.
+2. Kliknij ikonę **Session** (Sesja) w górnym lewym rogu.
+3. Wybierz zakładkę **SSH**.
+4. W polu **Remote host** wpisz adres IP SenseCap M1, np.:
+
+   ```
+   192.168.0.204
+   ```
+
+5. (Opcjonalnie) Zaznacz **Specify username** i wpisz login, np.:
+
+   ```
+   root
+   ```
+
+6. Ustaw port na **22** (lub inny, jeśli SenseCap działa na niestandardowym porcie).
+7. Rozwiń **Advanced SSH settings**.
+8. Zaznacz opcję **Use private key** i wskaż ścieżkę do pliku z kluczem prywatnym, np.:
+
+   ```
+   C:\Users\Kosmo\.ssh\sensecap_root
+   ```
+
+9. (Opcjonalnie) W sekcji **SSH-browser type** możesz ustawić protokół **SFTP**, aby mieć możliwość transferu plików.
+10. Kliknij **OK**, aby zapisać i otworzyć połączenie.
+
+---
+
+## 💡 Dodatkowe uwagi
+
+- Upewnij się, że klucz prywatny nie jest chroniony hasłem **lub** że agent SSH (`ssh-agent`) jest uruchomiony, jeśli klucz ma passphrase.
+- Jeśli SenseCap M1 działa na innym porcie niż 22, ustaw go w polu **Port**.
+- W przypadku problemów z połączeniem sprawdź:
+  - Czy urządzenie jest dostępne w sieci (ping).
+  - Czy firewall nie blokuje portu SSH.
+
+---
+
+✅ Teraz możesz zdalnie zarządzać SenseCap M1 przez terminal w **MobaXterm**!
+___
+
+Generator konfiguracji sieciowej na sensecap...
+
