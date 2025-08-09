@@ -143,7 +143,7 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
    root
    ```
 
-6. Ustaw port na **22** (lub inny, jeśli SenseCap działa na niestandardowym porcie).
+6. Ustaw port na **22222** (domyślny dla SenseCap).
 7. Rozwiń **Advanced SSH settings**.
 8. Zaznacz opcję **Use private key** i wskaż ścieżkę do pliku z kluczem prywatnym, np.:
 
@@ -159,7 +159,8 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
 ## 💡 Dodatkowe uwagi
 
 - Upewnij się, że klucz prywatny nie jest chroniony hasłem **lub** że agent SSH (`ssh-agent`) jest uruchomiony, jeśli klucz ma passphrase.
-- Jeśli SenseCap M1 działa na innym porcie niż 22, ustaw go w polu **Port**.
+   (domyslnie MobaXterm ma uruchomionego agenta SSH, a klucz generowany powyższym sposobem będzie wymagał tylko raz podania hasła do klucza jakie ustawiliśmy w ssh-keygen)
+- Jeśli SenseCap M1 działa na innym porcie niż 22222, ustaw go w polu **Port**.
 - W przypadku problemów z połączeniem sprawdź:
   - Czy urządzenie jest dostępne w sieci (ping).
   - Czy firewall nie blokuje portu SSH.
@@ -170,4 +171,5 @@ Ten dokument opisuje krok po kroku, jak skonfigurować połączenie SSH do urzą
 ___
 
 Generator konfiguracji sieciowej na sensecap...
+
 
