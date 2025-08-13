@@ -32,6 +32,7 @@ Wszystkie ważne zdarzenia są raportowane do **Telegrama** przez bota.
 ```bash
 /
 ├── root/
+│   ├── install_cron.sh
 │   ├── setup_miner_watchdog.sh
 │   ├── miner_watchdog.sh
 │   └── .env
@@ -59,11 +60,20 @@ cp miner_watchdog/scripts/*.sh /root
 
 * Usuń ewentualne znaki Windows
 ```bash
+sed -i 's/\r$//' /root/install_cron.sh
 sed -i 's/\r$//' /root/setup_miner_watchdog.sh
 sed -i 's/\r$//' /root/miner_watchdog.sh
 ```
 
 * Nadaj uprawnienia i uruchom instalację
+```bash
+chmod +x /root/install_cron.sh
+```
+```bash
+cd /root
+./install_cron.sh
+```
+* Konfiguracja
 ```bash
 chmod +x /root/setup_miner_watchdog.sh
 ```
@@ -73,7 +83,7 @@ cd /root
 ```
 ---
 
-## 🔧 Instalacja krok po kroku
+## 🔧 Konfiguracja krok po kroku
 
 ### 1. Przygotuj dane
 
@@ -95,12 +105,13 @@ cd /root
 Zaloguj się przez SSH i skopiuj pliki do katalogu `/root`:
 
 ```bash
-scp setup_miner_watchdog.sh miner_watchdog.sh root@HOTSPOT_IP:/root
+scp install_cron.sh setup_miner_watchdog.sh miner_watchdog.sh root@HOTSPOT_IP:/root
 ```
 
 Usuń ewentualne znaki Windows `\r`:
 
 ```bash
+sed -i 's/\r$//' /root/install_cron.sh
 sed -i 's/\r$//' /root/setup_miner_watchdog.sh
 sed -i 's/\r$//' /root/miner_watchdog.sh
 ```
@@ -108,11 +119,16 @@ sed -i 's/\r$//' /root/miner_watchdog.sh
 Nadaj prawa wykonywania:
 
 ```bash
+chmod +x /root/install_cron.sh
 chmod +x /root/setup_miner_watchdog.sh
 ```
 
-### 3. Uruchom instalator
+### 3. Uruchom instalator i konfoguracje
 
+```bash
+cd /root
+./install_cron.sh
+```
 ```bash
 cd /root
 ./setup_miner_watchdog.sh
@@ -122,7 +138,7 @@ Wprowadź wymagane dane (IP, tokeny, nazwę kontenera) — zostaną zapisane w `
 
 ---
 
-## 🛠 Co robi instalator?
+## 🛠 Co robi instalator/konfigurator?
 
 * Tworzy plik `.env` z Twoimi ustawieniami
 * Przygotowuje plik logów `/var/log/miner_watchdog.log`
