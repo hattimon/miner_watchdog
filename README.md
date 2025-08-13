@@ -68,15 +68,13 @@ sed -i 's/\r$//' /root/miner_watchdog.sh
 * Nadaj uprawnienia i uruchom instalację
 ```bash
 chmod +x /root/install_cron.sh
+chmod +x /root/setup_miner_watchdog.sh
 ```
 ```bash
 cd /root
 ./install_cron.sh
 ```
 * Konfiguracja
-```bash
-chmod +x /root/setup_miner_watchdog.sh
-```
 ```bash
 cd /root
 ./setup_miner_watchdog.sh
@@ -123,7 +121,7 @@ chmod +x /root/install_cron.sh
 chmod +x /root/setup_miner_watchdog.sh
 ```
 
-### 3. Uruchom instalator i konfoguracje
+### 3. Uruchom instalator i konfiguracje
 
 ```bash
 cd /root
