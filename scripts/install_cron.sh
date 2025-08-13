@@ -17,17 +17,12 @@ sudo apt-get update
 echo "[3/7] Instalacja cron dla $ARCH..."
 sudo apt-get install -y cron
 
-echo "[4/7] Naprawa ustawień języka (locale)..."
-sudo apt-get install -y locales
-
-# Dodaj pl_PL.UTF-8 do /etc/locale.gen jeśli go tam nie ma
-if ! sudo grep -q "^pl_PL.UTF-8 UTF-8" /etc/locale.gen; then
-  echo "pl_PL.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
-fi
-
-sudo locale-gen
-sudo update-locale LANG=pl_PL.UTF-8
-export LANG=pl_PL.UTF-8
+# Pomijamy krok dotyczący locale
+# echo "[4/7] Naprawa ustawień języka (locale)..."
+# sudo apt-get install -y locales
+# sudo locale-gen pl_PL.UTF-8
+# sudo update-locale LANG=pl_PL.UTF-8
+# export LANG=pl_PL.UTF-8
 
 echo "[5/7] Uruchamianie i włączanie usługi cron..."
 sudo systemctl start cron
