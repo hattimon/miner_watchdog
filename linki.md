@@ -159,6 +159,8 @@ This handy retro-hacker style generator enables quick creation of a bash script 
 
 ### 📥 Instalacja
 https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
+> ℹ️ Po instalacji panelu Crankk można go w każdej chwili odinstalować
+> — dostęp do konta root pozostaje zachowany i niezależny od panelu.
 
 ### 🖥 SSH
 - Port: 22  
