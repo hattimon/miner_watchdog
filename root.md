@@ -56,6 +56,8 @@ ssh-keygen
   - sensecap_key
   - sensecap_key.pub
 
+I recommend the SSH Key Forge application for generating the key: ![SSH Key Forge](https://github.com/hattimon/ssh-key-forge)
+
 ### 3️⃣ Add Key to config.json (CRITICAL)
 ```json
 "sshKeys": [
@@ -180,6 +182,13 @@ sudo su
 ```bash
 ssh-keygen
 ```
+Przykład: sensecap_key
+
+- Utworzone pliki:  
+  - sensecap_key  
+  - sensecap_key.pub  
+
+Do wygenerowania klucza polecam aplikację ![SSH Key Forge](https://github.com/hattimon/ssh-key-forge)
 
 ### 3️⃣ Edycja config.json
 
