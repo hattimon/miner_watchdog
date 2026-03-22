@@ -129,14 +129,13 @@ C:\Users\USER\.ssh\sensecap_key
 
 ---
 
-## ⚙️ Network Configuration Generator (SenseCap)
+## ⚙️ SenseCap M1 Network Config Generator
 
-This advanced tool allows:
-- WiFi config (DHCP / Static IP)
-- Ethernet-only mode (disable WiFi)
-- Script generation (balenaOS / NetworkManager)
-- Copy & download script
-- Visual hacker-style UI (animations + music + matrix effect)
+This handy retro-hacker style generator enables quick creation of a bash script for balenaOS (NetworkManager), which:
+- Enables WiFi configuration (DHCP or static IP),
+- Supports "Ethernet Only" mode (removes WiFi and disables radio),
+- Adds options to copy or download the generated script,
+- Features an audiovisual "super-hero code master" vibe with animation, background music, and "matrix rain."
 
 👉 https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html
 
@@ -252,17 +251,16 @@ C:\Users\Kowalski\.ssh\sensecap_key
 
 ---
 
-## ⚙️ Generator konfiguracji sieci (SenseCap)
+## ⚙️ Generator konfiguracji sieciowej dla SenseCap M1
 
-Generator umożliwia:
-- WiFi DHCP / statyczne IP  
-- Tryb tylko Ethernet  
-- Tworzenie skryptów bash (balenaOS)  
-- Kopiowanie i pobieranie konfiguracji  
-- Styl „hacker / matrix” (animacje + muzyka)
+Ten wygodny generator w stylu retro-hackerskim umożliwia szybkie tworzenie skryptu bash dla balenaOS (NetworkManager), który:
+- Umożliwia konfigurację WiFi (DHCP lub statyczne IP),
+- Obsługuje tryb „Tylko Ethernet” (usunięcie WiFi i wyłączenie radia),
+- Dodaje opcje kopiowania lub pobrania wygenerowanego skryptu,
+- Ma audiowizualny klimat „super-hero code master” z animacją, muzyką w tle i „matrix rain”.
 
 👉 https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html
 
 ---
 
-✅ Gotowe – pełny profesjonalny README GitHub
+✅ You are ready to go!
