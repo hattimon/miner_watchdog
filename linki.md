@@ -24,6 +24,9 @@
 ### 📥 Installation
 https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
 
+> ℹ️ After installing the Crankk panel, it can be uninstalled at any time  
+> — root account access remains preserved and independent of the panel.
+
 ### 🖥 SSH Access
 - Port: 22  
 - Login: crankk  
@@ -33,7 +36,7 @@ https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
 sudo su
 ```
 
-https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
+Old link: https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
 
 ---
 
