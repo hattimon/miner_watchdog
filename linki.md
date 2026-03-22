@@ -15,6 +15,13 @@ ___
 https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
 
 # Dostęp przez SSH do konta root na Heltec:
+
+Root kontem crankk:   
+SSH: 22   
+login: crankk   
+Hasło: B@tch0n3   
+Bash: sudo su  
+
 https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
 ___
 
