@@ -10,12 +10,9 @@
 # 🇬🇧 English Version
 
 ## 📡 Devices Overview
-
-- **HT-M2808 Indoor Hotspot**  
+- HT-M2808 Indoor Hotspot  
   https://heltec.org/project/ht-m2808/
-
-- **HT-M01S Indoor LoRa Gateway (Rev.2.0)**  
-  (External radio – root access via Heltec support)  
+- HT-M01S Indoor LoRa Gateway (Rev.2.0)  
   https://heltec.org/project/ht-m01s-v2/
 
 ---
@@ -27,133 +24,117 @@
 ### 📥 Installation
 https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
 
-### 🖥 SSH Access Details
-- Port: **22**
-- Login: **crankk**
-- Password: **B@tch0n3**
-- Gain root:
+### 🖥 SSH Access
+- Port: 22  
+- Login: crankk  
+- Password: B@tch0n3  
+
 ```bash
 sudo su
 ```
 
-🔗 https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
+https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
 
 ---
 
 # 🟩 SENSECAP M1 SECTION
 
-## 🔑 Full Root Access via SSH (SD Card Method)
+## 🔑 Root Access via SD Card (FULL GUIDE)
 
 ### 1️⃣ Remove SD Card
 - Insert into computer
-- Open partition: **resin-boot**
-- Locate file: **config.json**
-- ⚠️ Create backup (VERY IMPORTANT)
-
----
+- Open partition: resin-boot
+- Find config.json
+- ⚠️ Create backup
 
 ### 2️⃣ Generate SSH Key
-
 ```bash
 ssh-keygen
 ```
+- Example: sensecap_key
+- Files created:
+  - sensecap_key
+  - sensecap_key.pub
 
-- Example filename: `sensecap_key`
-- You will get:
-  - `sensecap_key` (private key)
-  - `sensecap_key.pub` (public key)
-
----
-
-### 3️⃣ Add Key to config.json (CRITICAL STEP)
-
-1. Open `sensecap_key.pub`
-2. Copy ENTIRE content
-3. Open `config.json`
-4. Find section:
-
+### 3️⃣ Add Key to config.json (CRITICAL)
 ```json
 "sshKeys": [
     "ssh-rsa ORIGINAL_KEY 10000000@sensecapmx.com"
 ]
 ```
 
-5. ADD comma after existing key  
-6. Paste new key in quotes
-
-✅ Final result MUST look like:
+➡️ Add comma and new key:
 
 ```json
 "sshKeys": [
     "ssh-rsa ORIGINAL_KEY 10000000@sensecapmx.com",
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ...YOUR_NEW_KEY"
+    "ssh-rsa AAAAB3...YOUR_KEY"
 ]
 ```
 
-💡 Missing comma = config will BREAK
-
----
+⚠️ Missing comma = system error
 
 ### 4️⃣ Reinsert SD Card
-- Insert back into device
-- Boot hotspot
-
----
-
-### 5️⃣ SSH Login
-
+### 5️⃣ Connect via SSH
 ```bash
-cd ~/.ssh
-
 ssh root@IP_HOTSPOT -p 22222 -i sensecap_key
 ```
 
-- Confirm connection: `yes`
-- Enter passphrase (if set)
+### 6️⃣ Commands
+- ls
+- cd ..
+- cd /
 
 ---
 
-### 6️⃣ Basic Commands
-- `ls`
-- `cd ..`
-- `cd /`
-
----
-
-## 💻 MobaXterm SSH Connection
+## 💻 MobaXterm Connection Guide (FULL)
 
 ### 📋 Requirements
-- MobaXterm
-- SSH key
-- Device IP
+- MobaXterm installed
+- SSH key generated
+- Private key file
+- SenseCap IP
+- Login: root
 
 ### 🔌 Steps
-1. Session → SSH  
-2. Enter IP  
-3. Port: **22222**  
-4. Specify username: **root**  
-5. Advanced → Use private key  
-6. Select file:
+1. Open MobaXterm  
+2. Click **Session**  
+3. Select **SSH**  
+4. Enter IP:
+```
+192.168.0.204
+```
+5. (Optional) Specify username:
+```
+root
+```
+6. Set port: **22222**  
+7. Open **Advanced SSH settings**  
+8. Enable **Use private key**  
+9. Select key:
 ```
 C:\Users\USER\.ssh\sensecap_key
 ```
+10. (Optional) Enable SFTP  
+11. Click OK  
 
 ---
 
-## 💡 Notes
-- SSH agent usually auto-enabled
-- Check firewall if connection fails
-- Verify device is reachable (ping)
+### 💡 Notes
+- SSH agent usually active
+- Key may require passphrase once
+- Check firewall & ping if issues
 
 ---
 
 ## ⚙️ Network Configuration Generator (SenseCap)
 
-This tool allows:
-
-- WiFi setup (DHCP / Static IP)
+This advanced tool allows:
+- WiFi config (DHCP / Static IP)
 - Ethernet-only mode (disable WiFi)
-- Quick script generation (balenaOS)
+- Script generation (balenaOS / NetworkManager)
+- Copy & download script
+- Visual hacker-style UI (animations + music + matrix effect)
 
 👉 https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html
 
@@ -163,134 +144,116 @@ This tool allows:
 # 🇵🇱 Wersja Polska
 
 ## 📡 Urządzenia
-
-- **HT-M2808 Indoor Hotspot**  
-  https://heltec.org/project/ht-m2808/
-
-- **HT-M01S Indoor LoRa Gateway (Rev.2.0)**  
-  (Radio zewnętrzne – root przez support Heltec)  
-  https://heltec.org/project/ht-m01s-v2/
+- HT-M2808 Indoor Hotspot  
+- HT-M01S Indoor LoRa Gateway  
 
 ---
 
 # 🟦 SEKCJA HELTEC
 
-## 🔐 Dostęp root przez Crankk
+## 🔐 Root przez Crankk
 
 ### 📥 Instalacja
 https://crankk.io/guides/crankk-official-guide-for-onboarding-a-heltec-gateway
 
-### 🖥 Dostęp SSH
-- Port: **22**
-- Login: **crankk**
-- Hasło: **B@tch0n3**
+### 🖥 SSH
+- Port: 22  
+- Login: crankk  
+- Hasło: B@tch0n3  
 
-Uzyskanie root:
 ```bash
 sudo su
 ```
 
-🔗 https://crankk.io/support/gateways/make-a-secure-shell-ssh-connection-to-your-gateway
-
 ---
 
-# 🟩 SEKCJA SENSECAP M1
+# 🟩 SEKCJA SENSECAP
 
-## 🔑 Pełny dostęp root (metoda SD)
+## 🔑 Root przez SSH (pełna instrukcja)
 
 ### 1️⃣ Wyjmij kartę SD
-- Podłącz do komputera  
-- Otwórz **resin-boot**  
-- Znajdź **config.json**  
-- ⚠️ Zrób kopię zapasową  
+- Otwórz resin-boot  
+- Znajdź config.json  
+- ⚠️ Zrób backup  
 
----
-
-### 2️⃣ Wygeneruj klucz SSH
-
+### 2️⃣ Generuj klucz
 ```bash
 ssh-keygen
 ```
 
-- Nazwa np.: `sensecap_key`
-- Powstaną:
-  - `sensecap_key`
-  - `sensecap_key.pub`
-
----
-
-### 3️⃣ Dodaj klucz do config.json (NAJWAŻNIEJSZE)
-
-1. Otwórz `sensecap_key.pub`
-2. Skopiuj CAŁOŚĆ
-3. Otwórz `config.json`
-4. Znajdź:
+### 3️⃣ Edycja config.json
 
 ```json
 "sshKeys": [
-    "ssh-rsa TwójOryginalnyKlucz== 10000000@sensecapmx.com"
+    "ssh-rsa TwójKlucz"
 ]
 ```
 
-5. Dodaj przecinek po pierwszym kluczu  
-6. Wklej nowy klucz w cudzysłowie  
-
-✅ Efekt końcowy:
+➡️ Dodaj przecinek + nowy klucz:
 
 ```json
 "sshKeys": [
-    "ssh-rsa TwójOryginalnyKlucz== 10000000@sensecapmx.com",
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ...TwójNowyKlucz"
+    "ssh-rsa TwójKlucz",
+    "ssh-rsa NOWY_KLUCZ"
 ]
 ```
 
-💡 Brak przecinka = błąd systemu
+⚠️ Brak przecinka = błąd
 
 ---
 
-### 4️⃣ Włóż kartę SD
-- Uruchom urządzenie
-
----
-
-### 5️⃣ Logowanie SSH
-
+### 4️⃣ Włóż kartę
+### 5️⃣ SSH
 ```bash
-cd ~/.ssh
-
 ssh root@IP_HOTSPOTA -p 22222 -i sensecap_key
 ```
 
 ---
 
-### 6️⃣ Podstawowe komendy
-- ls  
-- cd ..  
-- cd /  
+## 💻 MobaXterm (pełna instrukcja)
 
----
-
-## 💻 MobaXterm
+### 📋 Wymagania
+- MobaXterm  
+- Klucz SSH  
+- IP  
+- Login root  
 
 ### 🔌 Kroki
 1. Session → SSH  
-2. IP urządzenia  
+2. IP:
+```
+192.168.0.204
+```
 3. Port: 22222  
-4. Login: root  
-5. Klucz prywatny  
+4. Username: root  
+5. Advanced → Use private key  
+6. Wskaż:
+```
+C:\Users\Kowalski\.ssh\sensecap_key
+```
+7. (Opcjonalnie) SFTP  
+8. OK  
 
 ---
 
-## ⚙️ Generator konfiguracji sieci
+### 💡 Uwagi
+- ssh-agent aktywny domyślnie  
+- Możliwe jednorazowe hasło do klucza  
+- Sprawdź firewall i ping  
+
+---
+
+## ⚙️ Generator konfiguracji sieci (SenseCap)
 
 Generator umożliwia:
-
 - WiFi DHCP / statyczne IP  
 - Tryb tylko Ethernet  
-- Automatyczne skrypty  
+- Tworzenie skryptów bash (balenaOS)  
+- Kopiowanie i pobieranie konfiguracji  
+- Styl „hacker / matrix” (animacje + muzyka)
 
 👉 https://hattimon.github.io/helium/SenseCapM1/wifi-configurator.html
 
 ---
 
-✅ Gotowe – pełny profesjonalny README dla GitHub!
+✅ Gotowe – pełny profesjonalny README GitHub
